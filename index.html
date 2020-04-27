@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
+	<meta name="viewport" content="width=device-width, initial-scale= 1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- preloading -->
+	<link rel="stylesheet" type="text/css" href="libs/loading/loading.css">
+	<script src="libs/loading/loading.js"></script>
+<!-- base -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/script.js"></script>
+	<title>Рихард Штауфер - Frontend-разработчик</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+<!-- fonts -->
+	<link rel="stylesheet" type="text/css" href="libs/FontAwesome/css/all.min.css">
+<!-- vendors script -->
+	<link rel="stylesheet" href="libs/OwlCarousel/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="libs/OwlCarousel/assets/owl.theme.default.min.css">
+	<script src="libs/OwlCarousel/owl.carousel.min.js"></script>
+<!-- sendform -->
+	<link href="libs/sendform/sendform.css.css" rel="stylesheet">
+	<link href="libs/sendform/sendindex.css" rel="stylesheet">
+	<script src="libs/sendform/wb.stickylayer.min.js"></script>
+	<script src="libs/sendform/sendscript.js"></script>
+	<script src="libs/sendform/wwb15.min.js"></script>
+	<script>
+		function submitForm1()
+		{
+		var regexp;
+		var Editbox3 = document.getElementById('Editbox3');
+		if (!(Editbox3.disabled || Editbox3.style.display === 'none' || Editbox3.style.visibility === 'hidden'))
+		{
+			regexp = /^[-+]?\d*\.?\d*$/;
+			if (Editbox3.value.length != 0 && !regexp.test(Editbox3.value))
+			{
+				/* alert("Please enter only digit characters in the \"Почта клиента\" field."); */
+				Editbox3.focus();
+				return false;
+			}
+		}
+		var Editbox1 = document.getElementById('Editbox1');
+		if (!(Editbox1.disabled || Editbox1.style.display === 'none' || Editbox1.style.visibility === 'hidden'))
+		{
+			regexp = /^[-+]?\d*\.?\d*$/;
+			if (Editbox1.value.length != 0 && !regexp.test(Editbox1.value))
+			{
+				/* alert("Please enter only digit characters in the \"Имя клиента\" field."); */
+				Editbox1.focus();
+				return false;
+			}
+		}
+		var Editbox2 = document.getElementById('Editbox2');
+		if (!(Editbox2.disabled || Editbox2.style.display === 'none' || Editbox2.style.visibility === 'hidden'))
+		{
+			regexp = /^[-+]?\d*\.?\d*$/;
+			if (Editbox2.value.length != 0 && !regexp.test(Editbox2.value))
+			{
+				/* alert("Please enter only digit characters in the \"Телефон клиента\" field."); */
+				Editbox2.focus();
+				return false;
+			}
+		}
+		var checkbox = document.getElementById('checkbox');
+		if (!(checkbox.disabled ||
+				checkbox.style.display === 'none' ||
+				checkbox.style.visibility === 'hidden'))
+		{
+			if (checkbox.checked != true)
+			{
+				alert("Согласитесь с обработкой персональных данных.");
+				return false;
+			}
+		}
+		return true;
+		}
+	</script>
+	<script>
+		$(document).ready(function()
+		{
+			$("#sendform").stickylayer({orientation: 9, position: [0, 0], delay: 1000});
+			$("#formend").stickylayer({orientation: 9, position: [0, 0], delay: 1000});
+		});
+	</script>
+</head>
+<body>
+<!-- preloading -->
+	<div class="preloader">
+		<div class="preloader__container">
+			<div class="preloader__container_item-1"></div>
+			<div class="preloader__container_item-2"></div>
+			<div class="preloader__container_item-3"></div>
+			<div class="preloader__container_item-4"></div>
+			<div class="preloader__container_item-5"></div>
+		</div>
+	</div>
+<!-- code -->
+	<header class="fix-container" id="home">
+		<div class="fix-container__header-container flex ai-center">
+			<div><button id="button-menu"><i class="fas fa-bars"></i></button></div>
+			<div>
+				<nav class="ani_menu">
+					<ul class="menu flex">
+						<li><a href="#skills">Услуги
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+						<li><a href="#portfolio">Портфолио
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+						<li><a href="#price">Стоимость
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div>
+				<div class="telephone-number">+7 (931) 305-27-53</div>
+			</div>
+			<div>
+				<input type="button" class="button-call cursor fade-btn" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Заказать звонок">
+			</div>
+			<div>
+				<input type="button" class="button-call_sm cursor" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="&#63;">
+			</div>
+		</div>
+		<div class="menu-container">
+			<div class="menu-container__toggle">
+				<ul class="menu-container__toggle_slide">
+					<li><a href="#skills">Услуги</a></li>
+					<li><a href="#portfolio">Портфолио</a></li>
+					<li><a href="#price">Стоимость</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<!-- sendform code -->
+		<div id="oksend" style="position:absolute;text-align:center;visibility:hidden;left:663px;top:237px;width:537px;height:403px;z-index:26;">
+			<div id="oksend_Container" style="width:537px;height:403px;position:relative;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;text-align:left;">
+				<input type="submit" id="Button2" name="btn" value="Ok" style="position:absolute;left:220px;top:323px;width:96px;height:25px;z-index:0;">
+				<div id="wb_Text1" style="position:absolute;left:44px;top:51px;width:433px;height:15px;z-index:1;">
+					<p style="font-size:13px;line-height:16px;color:#000000;">Спасибо! Заявка принята.</p>
+				</div>
+			</div>
+		</div>
+			<div id="sendform" style="position:absolute;text-align:center;visibility:hidden;left:60px;top:120px;width:300px;height:429px;z-index:28;">
+				<div id="sendform_Container" style="width:300px;height:429px;position:relative;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;text-align:left;">
+					<div id="wb_sendform__block" style="position:absolute;left:10px;top:14px;width:280px;height:400px;z-index:12;">
+					<form name="Form1" method="post" action="mailto:yourname@yourdomain.com" enctype="multipart/form-data" id="sendform__block" onsubmit="return submitForm1()">
+						<input type="text" id="Editbox3" style="position:absolute;left:20px;top:140px;width:240px;height:34px;z-index:2;" name="Почта клиента" value="" spellcheck="false" placeholder="&#1042;&#1072;&#1096;&#1072; &#1101;&#1083;&#1077;&#1082;&#1090;&#1088;&#1086;&#1085;&#1085;&#1072;&#1103; &#1087;&#1086;&#1095;&#1090;&#1072;">
+						<textarea name="Текст письма" id="TextArea1" style="position:absolute;left:20px;top:190px;width:240px;height:78px;z-index:3;" rows="4" cols="27" spellcheck="false" placeholder="&#1054;&#1087;&#1080;&#1096;&#1080;&#1090;&#1077; &#1042;&#1072;&#1096; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;"></textarea>
+						<input type="text" id="Editbox1" style="position:absolute;left:20px;top:40px;width:240px;height:34px;z-index:4;" name="Имя клиента" value="" spellcheck="false" placeholder="&#1042;&#1072;&#1096;&#1077; &#1080;&#1084;&#1103;">
+						<input type="text" id="Editbox2" style="position:absolute;left:20px;top:90px;width:240px;height:34px;z-index:5;" name="Телефон клиента" value="" maxlength="12" spellcheck="false" placeholder="&#1042;&#1072;&#1096; &#1085;&#1086;&#1084;&#1077;&#1088; &#1090;&#1077;&#1083;&#1077;&#1092;&#1086;&#1085;&#1072;">
+						<div id="wb_checkbox" style="position:absolute;left:20px;top:290px;width:25px;height:23px;z-index:6;">
+						<input type="checkbox" id="checkbox" name="Checkbox1" value="on" style="position:absolute;left:0;top:0;"><label for="checkbox"></label></div>
+						<div id="wb_fztext" style="position:absolute;left:46px;top:285px;width:230px;height:33px;z-index:7;">
+							<p style="color:#000000;">Согласие&nbsp;на&nbsp;обработку, хранение&nbsp;и&nbsp;использование</p>
+							<p style="color:#000000;">своих&nbsp;персональных&nbsp;данных&nbsp;на&nbsp;основании&nbsp;ФЗ&nbsp;№ 152-ФЗ </p>
+							<p style="color:#000000;">«О&nbsp;персональных&nbsp;данных»&nbsp;от 27.07.2006 г.</p></div>
+						<input type="submit" id="sendbutton" name="btn" value="Отправить" style="position:absolute;left:67px;top:342px;width:188px;height:45px;z-index:8;">
+						<div id="wb_Image1" style="position:absolute;left:4px;top:339px;width:50px;height:50px;z-index:9;">
+						<img src="img/rslogo.png" id="Image1" alt=""></div>
+						<div id="wb_haupttext" style="position:absolute;left:35px;top:8px;width:179px;height:20px;text-align:center;z-index:10;">
+						<p style="font-family:Arial;font-size:13px;line-height:16px;color:#000000;"><span style="font-family:Calibri;font-size:16px;line-height:19.5px;">Заполните форму!</span></p></div>
+						<div id="wb_Extension3" style="position:absolute;left:229px;top:8px;width:41px;height:35px;z-index:11;">
+					<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="webtogo.ru">
+						<input type="hidden" name="admin_email" value="staufer.richard@gmail.com">
+						<input type="hidden" name="form_subject" value="Заявка с сайта webtogo.ru">
+					<!-- END Hidden Required Fields --></div>
+					</form>
+				</div>
+				<input type="reset" id="closebutton" onclick="ShowObject('wb_sendform__block', 0);ShowObject('sendform', 0);return false;" name="X" value="X" style="position:absolute;left:3px;top:17px;width:42px;height:31px;background:rgba(255, 255, 255, 0);outline:none;border:none;z-index:13;">
+			</div>
+			</div>
+			<div id="formend" style="position:absolute;text-align:center;visibility:hidden;left:50px;top:110px;width:367px;height:451px;z-index:29;">
+			<div id="formend_Container" style="width:367px;height:451px;position:relative;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;text-align:left;">
+			<input type="button" id="okbutton" onclick="ShowObject('formend', 0);ShowObject('wb_sendform__block', 0);ShowObject('sendform', 0);return false;" name="btn" value="Отлично" style="position:absolute;left:82px;top:320px;width:202px;height:51px;z-index:24;">
+			<div id="wb_oktext" style="position:absolute;left:41px;top:102px;width:284px;height:114px;text-align:center;z-index:25;">
+				<p style="font-size:19px;line-height:22.5px;font-weight:bold;color:#000000;">Благодарю за обращение!</p>
+				<p style="font-size:19px;line-height:22.5px;font-weight:bold;color:#000000;">Ваше сообщение отправлено.</p>
+				<p style="font-size:19px;line-height:22.5px;font-weight:bold;">&nbsp;</p>
+				<p style="font-size:19px;line-height:22.5px;font-weight:bold;color:#000000;">Я&nbsp;свяжусь&nbsp;с Вами</p>
+				<p style="font-family:Arial;font-size:13px;line-height:16px;font-weight:bold;color:#000000;"><span style="font-family:Calibri;font-size:19px;line-height:22.5px;"> в ближайшее время!</span></p></div>
+			</div>
+		</div>
+		<!-- END sendform code -->
+		<div id="first-block">
+			<div class="fly-elements">
+				<div class="fly-element__item fe1">{&nbsp;}</div>
+				<div class="fly-element__item fe2">#</div>
+				<div class="fly-element__item fe3">&lt;div&gt;</div>
+				<div class="fly-element__item fe4">&lt;div&gt;</div>
+				<div class="fly-element__item fe5">&lt;/&gt;</div>
+			</div>
+			<div  class="first-block__container fix-container jc-sb">
+				<img class="first-block__img" src="img/rs.png" alt="">
+				<div class="first-block__text">
+					<h2>Рихард Штауфер</h2>
+					<div class="first-block__text_h2">Frontend-разработчик и <span style="white-space: nowrap">веб-верстальшик</span></div>
+					<input type="button" class="button__type cursor back-pulse" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Узнать больше">
+				</div>
+			</div>
+		</div>
+		<div class="flex down">
+			<div><h2>Рихард Штауфер</h2></div>
+			<div class="first-block__text_h2">Frontend-разработчик и <span style="white-space: nowrap">веб-верстальшик</span></div>
+			<input type="button" class="button__type cursor" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Узнать больше">
+		</div>
+		<div class="fix-container flex jc-center" id="skills">
+			<div>
+				<h3>Что я делаю</h3>
+			</div>
+		</div>
+		<div class="fix-container col jc-sb flex">
+			<div class="vid flex">
+				<img src="img/ic1.png" alt="">
+				<div class="gtext">Вёрстка лендинг–страниц и сайтов любой сложности</div>
+			</div>
+			<div class="vid flex">
+				<img src="img/ic2.png" alt="">
+				<div class="gtext">Адаптивная вёрстка под все браузеры и устройства</div>
+			</div>
+			<div class="vid flex">
+				<img src="img/ic3.png" alt="">
+				<div class="gtext">Frontend–разработка и программирование</div>
+			</div>
+			<div class="vid flex">
+				<img src="img/ic4.png" alt="">
+				<div class="gtext">Исправление и доработка существующей вёрстки</div>
+			</div>
+		</div>
+		<div class="fix-container flex jc-center">
+			<!-- <div>
+				<input type="button" class="button__type cursor" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Узнать стоимость">
+			</div> -->
+			<div class="container_btn flex jc-center">
+				<a class="btn" href="#" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;">Узнать стоимость</a>
+			</div>
+		</div>
+		<div class="fix-container flex jc-center" id="portfolio">
+			<div>
+				<h3>Примеры моих работ</h3>
+			</div>
+		</div>
+		<div class="carousel-block fix-container">
+			<div class="owl-carousel owl-theme">
+				<div class="owl-carousel__item">
+					<a href="https://staufer.ru/" target="_blank">
+					<img class="slider__img" src="img/zb1.jpg" alt="First slide"></a>
+					<div class="slider__description"><a href="https://staufer.ru/" target="_blank">Мой личный сайт как тренера и коуча</a></div>
+				</div>
+				<div class="owl-carousel__item">
+					<a href="https://tcforum.ru/tft/" target="_blank">
+					<img class="slider__img" src="img/zb2.jpg" alt="Second slide"></a>
+					<div class="slider__description"><a href="https://tcforum.ru/tft/" target="_blank">Рекламный сайт тренинга тренеров</a></div>
+				</div>
+				<div class="owl-carousel__item">
+					<a href="http://idoula.ru/" target="_blank">
+					<img class="slider__img" src="img/zb3.jpg" alt="Third slide"></a>
+					<div class="slider__description"><a href="http://idoula.ru/" target="_blank">Сайт доулы Юлии Омельчук</a></div>
+				</div>
+				<div class="owl-carousel__item">
+					<a href="http://tcforum.ru/" target="_blank">
+					<img class="slider__img" src="img/zb4.jpg" alt="Fourth slide"></a>
+					<div class="slider__description"><a href="http://tcforum.ru/" target="_blank">Сайт-форум для тренеров и коучей</a></div>
+				</div>
+				<div class="owl-carousel__item">
+					<a href="http://corpc.ru/" target="_blank">
+					<img class="slider__img" src="img/zb5.jpg" alt="Fifth slide"></a>
+					<div class="slider__description"><a href="http://corpc.ru/" target="_blank">Сайт консультационного агенства CorpC</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="fix-container flex jc-center">
+			<!-- <div>
+				<input type="button" class="button__type cursor" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Заказать проект">
+			</div> -->
+			<div class="ani-container flex jc-center">
+				<a class="ani-btn" href="#" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;">Заказать проект</a>
+			</div>
+		</div>
+		<div class="grad" id="price">
+			<div class="fly-elements-down">
+				<div class="fly-element-down__item fe6">{&nbsp;}</div>
+				<div class="fly-element-down__item fe7">&lt;div&gt;</div>
+				<div class="fly-element-down__item fe8">#</div>
+				<div class="fly-element-down__item fe9">&lt;div&gt;</div>
+				<div class="fly-element-down__item fe0">&lt;/&gt;</div>
+			</div>
+			<div class="price-container flex fd-c">
+				<div id="price-container__text_1">Адаптивная вёрстка под&nbsp;все устройства и&nbsp;браузеры от 15000&nbsp;рублей всего за&nbsp;4&nbsp;часа.*</div>
+				<div id="price-container__text_2">* Срок и стоимость могут отличаться от&nbsp;заявленных и рассчитываются  индивидуально, в&nbsp;зависимости от сложности задач.</div>
+			</div>
+		</div>
+		<div class="downblock fix-container flex jc-sb ai-center">
+			<div>
+				<nav class="ani_menu">
+					<ul class="downblock__menu">
+						<li><a href="#skills">Услуги
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+						<li><a href="#portfolio">Портфолио
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+						<li><a href="#price">Стоимость
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div>
+				<div class="inline flex">
+					<div class="telephone-number_icon"><i class="fas fa-phone-alt"></i></div>
+					<div class="a_hover">
+						<a href="tel:+79313052753">+7 (931) 305-27-53</a>
+					</div>
+				</div>
+				<div class="inline flex">
+					<div class="email_icon"><i class="fas fa-envelope"></i></div>
+					<div class="a_hover">
+						<a href="mailto:staufer@outlook.com">staufer@outlook.com</a>
+					</div>
+				</div>
+			</div>
+			<div class="flex fd-c">
+				<div>
+					<input type="button" class="button-call_2 cursor fade-btn" onclick="ShowObject('sendform', 1);ShowObject('wb_sendform__block', 1);return false;" name="btn" value="Заказать звонок">
+				</div>
+				<div class="social-sprite flex jc-sa">
+					<div><a href="https://vk.com/staufer" target="_blank"><img id="vk" src="img/socicons.jpg" alt="vk"></a></div>
+					<div><a href="https://www.instagram.com/richard_staufer/" target="_blank"><img id="in" src="img/socicons.jpg" alt="instagram"></a></div>
+					<div><a href="https://www.facebook.com/rstaufer" target="_blank"><img id="fb" src="img/socicons.jpg" alt="facebook"></a></div>
+				</div>
+			</div>
+		</div>
+		<!-- кнопка Up -->
+		<div id="StickyLayer">
+			<div class="backtotop" id="wb_up-arrow">
+				<a href="./index.html#home">
+					<div id="up-arrow"><i class="fas fa-angle-up"></i></div>
+				</a>
+			</div>
+        </div>
+	</main>
+	<footer class="flex jc-center">
+		<div>
+			<div>© Рихард Штауфер, 2010 – 2020</div>
+		</div>
+	</footer>
+</body>
+</html>

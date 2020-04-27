@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale= 1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+   #formwords{
+     text-align:center;
+     padding: 10px;
+     width:180px;
+     font-size:30px;
+     font-weight:bold;
+     position: absolute;
+   }
+</style>
+</head>
+<body>
+<script>
+
+  var array = [ 'Красный', 'Синий', 'Голубой', 'Зеленый', 'Фиолетовый', 'Розовый','Оранжевый','Черный','Хлопок','Белый','Коричневый','Желтый','Хлопок'];
+  var arrayColor=['#FF6A00','#FFD800','#000','#fff','#FF006E','#0026FF','#00FFFF','#267F00','#FF0000'];  
+
+
+  setInterval(newDiv,2000)
+  
+  function newDiv(){ 
+    var randstr=array[getRandomInt(0,array.length-1)];
+    document.getElementById("formwords").innerHTML=randstr;
+    setColor();
+    setPosition();
+  }
+  function getRandomInt(min, max)  
+  {  
+
+   return Math.floor(Math.random() * (max - min + 1)) + min;  
+
+  } 
+  function setColor(){
+      var indColor=getRandomInt(0, arrayColor.length-1);
+      var indColorFon=getRandomInt(0, arrayColor.length-1);
+      while(indColor==indColorFon)
+      indColorFon=getRandomInt(0, arrayColor.length-1);
+      document.getElementById("formwords").style.color=arrayColor[indColor];
+      document.getElementById("formwords").style.backgroundColor=arrayColor[indColorFon];
+  }
+  function setPosition(){
+    var maxWidth=window.innerWidth-180 ;
+    var maxHeight=window.innerHeight- 50; 
+    var divEl=document.getElementById("formwords");
+    divEl.style.left = getRandomInt(0, maxWidth)+'px';
+    divEl.style.top = getRandomInt(0, maxHeight)+'px';
+    
+  }
+
+  
+</script>
+
+<div id="formwords" style="color: rgb(38, 127, 0); background-color: rgb(0, 255, 255); left: 524px; top: 791px;">Красный</div>
+
+</body>
+</html>
